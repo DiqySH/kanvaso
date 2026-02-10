@@ -2,14 +2,29 @@
   "name": "kanvaso",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/kanvaso.cjs",
-  "module": "./dist/kanvaso.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/kanvaso-index.es.js",
+      "require": "./dist/kanvaso-index.cjs.js"
+    },
+    "./pen": {
+      "types": "./dist/pen/index.d.ts",
+      "import": "./dist/kanvaso-pen.es.js",
+      "require": "./dist/kanvaso-pen.cjs.js"
+    },
+    "./pen-react": {
+      "types": "./dist/pen-react/index.d.ts",
+      "import": "./dist/kanvaso-pen-react.es.js",
+      "require": "./dist/kanvaso-pen-react.cjs.js"
+    }
+  },
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && tsc",
     "prepublishOnly": "npm run build"
   },
   "keywords": [],
@@ -17,7 +32,14 @@
   "license": "MIT",
   "description": "Simple game engine for web.",
   "devDependencies": {
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "typescript": "^5.9.3",
     "vite": "^7.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18"
   }
 }
