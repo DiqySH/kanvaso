@@ -1,24 +1,46 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.css";
+import { Engine } from "../../../src/core";
+import { Player } from "../../../src/core";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const app = document.querySelector<HTMLDivElement>("#app")!;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const container = document.createElement("div");
+container.style.width = "100vw";
+container.style.height = "100vh";
+container.style.display = "flex";
+container.style.flexDirection = "column";
+container.style.justifyContent = "center";
+container.style.gap = "1rem";
+container.style.placeItems = "center";
+
+app.appendChild(container);
+
+const containerRect = container.getBoundingClientRect();
+
+const canvas = document.createElement("canvas");
+canvas.width = containerRect.width;
+canvas.height = containerRect.height;
+canvas.style.width = "100%";
+canvas.style.height = "100%";
+canvas.style.border = "1px black solid";
+
+container.appendChild(canvas);
+
+const player1 = new Player(
+  "https://www.vg.no/vgc/spesial/2025/berikelser-tom/assets/images/epstein/epstein.png",
+  100,
+  100,
+);
+
+const player2 = new Player(
+  "https://www.vg.no/vgc/spesial/2025/berikelser-tom/assets/images/epstein/epstein.png",
+  100,
+  100,
+);
+
+const engine = new Engine(canvas);
+engine.insertPlayer(player1);
+engine.start();
+setTimeout(() => {
+  engine.insertPlayer(player2);
+}, 1000);
