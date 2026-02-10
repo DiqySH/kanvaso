@@ -1,2 +1,2 @@
 ![The Canvaso Logo](https://qzeffagkkeckyyfxpcbp.supabase.co/storage/v1/object/public/images/kanvaso-banner.png)
-Kanvaso - Simple 2D game engine for web.
+A javascript library that simplifying the use of canvas in HTML, React, and other frameworks.
