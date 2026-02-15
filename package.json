@@ -17,6 +17,11 @@
       "types": "./dist/pen-react/index.d.ts",
       "import": "./dist/kanvaso-pen-react.es.js",
       "require": "./dist/kanvaso-pen-react.cjs.js"
+    },
+    "./game": {
+      "types": "./dist/game/index.d.ts",
+      "import": "./dist/kanvaso-game.es.js",
+      "require": "./dist/kanvaso-game.cjs.js"
     }
   },
   "types": "./dist/index.d.ts",

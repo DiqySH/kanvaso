@@ -10,6 +10,7 @@ export default defineConfig({
         index: "src/index.ts",
         pen: "src/pen/index.ts",
         "pen-react": "src/pen-react/index.ts",
+        game: "src/game/index.ts",
       },
       name: "Kanvaso",
       fileName: (format, entryName) => `kanvaso-${entryName}.${format}.js`,
