@@ -3,6 +3,7 @@ import PenReact from "./pages/PenReact";
 import Home from "./pages/Home";
 import PenCanvasReact from "./pages/PenCanvasReact";
 import PenVanilla from "./pages/PenVanilla";
+import Game from "./pages/Game";
 
 export const pages: RouteObject[] = [
   {
@@ -16,6 +17,10 @@ export const pages: RouteObject[] = [
   {
     path: "/PenVanilla",
     element: <PenVanilla />,
+  },
+  {
+    path: "/Game",
+    element: <Game />,
   },
 ];
 
